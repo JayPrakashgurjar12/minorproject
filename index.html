@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <div class="logo">
+        <h1>Agri Seeds</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li> 
+            
+            <li><a href="#">Track Order</a></li>
+             <li><a href="#about">Contact</a></li>    
+             <li> <button onclick="showCart()">Cart (<span id="cart-count">0</span>)</button></li>
+             
+               <li><div class="nav-icon" id="loginIcon">🔑 Login</div></li>
+            
+        
+            <div class="modal" id="loginModal">
+                <div class="modal-content">
+                    <span class="close" id="closeModal">&times;</span>
+                    <h2>Login</h2>
+                    <div id="mobileSection">
+                        <input type="text" id="mobileNumber" placeholder="Enter your mobile number" />
+                        <button id="sendOtpBtn">Send OTP</button>
+                        <div id="otpMessage" class="otp-message"></div>
+                    </div>
+                    <div id="otpSection" style="display:none;">
+                        <input type="text" id="otp" placeholder="Enter OTP" />
+                        <button id="verifyOtpBtn">Verify OTP</button>
+                        <div id="registrationMessage" class="otp-message"></div>
+                    </div>
+                </div>
+            </div>
+             
+        
+    </nav>
+    </header>
+    <!-- Product Search Section -->
+    <section class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search seeds by name or type...">
+        <button id="searchBtn">Search</button>
+    </section>
+    <div class="products-container" id="products-container">
+        <!-- Sample Product Listing -->
+        
+
+        <div class="product">
+            <img src="png-transparent-tomato-soup-tomato-juice-tomato-thumbnail.png" alt="Product 1" class="product-image">
+            <h3>Tomato</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+                <p>Season: Summer</p>
+                <p>Quantity: 100 seeds </p>
+            </p>
+            <p>Price: <span class="original-price">$20.00</span> <span class="discounted-price">$15.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 1', 15)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="th.jpeg" alt="Product 2" class="product-image">
+            <h3>Corn</h3>
+             <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: rainy</p>
+             <p> sometimes in winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+           
+           
+            <button class="add-to-cart" onclick="addToCart('Product 2', 25)">Add to Cart</button>
+            
+        </div>
+        <div class="product">
+            <img src="onion.jpeg" alt="Product 3" class="product-image">
+            <h3>onion</h3>
+            <p>Type: Vegetable | Germination Rate: 60% | Planting </p>
+             <p>Season: rainy and Winter</p>
+          <p>Quantity: 180 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 2', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="potato.jpeg" alt="Product 4" class="product-image">
+            <h3>Potato</h3>
+            <p>Type: Vegetable | Germination Rate: 60% | Planting </p>
+             <p>Season: summer</p>
+          <p>Quantity: 80 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 2', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="wheat.jpeg" alt="Product 2" class="product-image">
+            <h3>Wheat</h3>
+            <p>Type: Vegetable | Germination Rate: 80% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 2', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="moong.jpeg" alt="Product 6" class="product-image">
+            <h3>moong</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: all</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 2', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="chia.jpeg" alt="Product 7" class="product-image">
+            <h3>chia</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 2', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sarso.jpeg" alt="Product 8" class="product-image">
+            <h3>sarso</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="masoor.jpeg" alt="Product 9" class="product-image">
+            <h3>masoor</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="soyabeen.jpeg" alt="Product 10" class="product-image">
+            <h3>soyabeen</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="tulsi seed.jpeg" alt="Product 11" class="product-image">
+            <h3>tulsi seed</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="rice.jpeg" alt="Product 12" class="product-image">
+            <h3>rice</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sarso.jpeg" alt="Product 13" class="product-image">
+            <h3>sarso</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sarso.jpeg" alt="Product 14" class="product-image">
+            <h3>sarso</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sarso.jpeg" alt="Product 15" class="product-image">
+            <h3>sarso</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="sarso.jpeg" alt="Product 16" class="product-image">
+            <h3>sarso</h3>
+            <p>Type: Vegetable | Germination Rate: 90% | Planting </p>
+             <p>Season: winter</p>
+          <p>Quantity: 150 seeds </p>
+            <p>Price: <span class="original-price">$30.00</span> <span class="discounted-price">$25.00</span></p>
+            <button class="add-to-cart" onclick="addToCart('Product 8', 25)">Add to Cart</button>
+        </div>
+
+        <!-- Add more products as needed -->
+    </div>
+<div>
+    <h2 class="pest"> Pesticides</h2>
+</div>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p>Total: $<span id="total-price">0</span></p>
+            <button onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <div>
+        <p id="about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, commodi.</p>
+    </div>
+     <!-- Newsletter Subscription -->
+     <section class="newsletter">
+        <h2>Subscribe to our Newsletter</h2>
+        <form id="subscribeForm">
+            <input type="email" id="subscribeEmail" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- feedback form -->
+    <div class="feedback-container" id="feedbackContainer">
+        <h2>Feedback Form</h2>
+        <textarea id="feedbackText" placeholder="Write your feedback here..." rows="4"></textarea>
+        <button id="submitFeedbackBtn">Submit Feedback</button>
+        <div id="feedbackMessage" class="feedback-message"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Agriculture E-Commerce</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
